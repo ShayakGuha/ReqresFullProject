@@ -25,7 +25,7 @@ public class GetTestCases extends Base{
         assertEquals(reqresResponse.data.size(),0);
     }
 
-    @Test
+    @Test(priority=3)
     public void validatePageNumber()
     {
         queryParam.put("page","1");
@@ -34,7 +34,7 @@ public class GetTestCases extends Base{
         assertEquals(reqresResponse.page,1);
     }
 
-    @Test
+    @Test(priority=4)
     public void checkDataSize(){
         queryParam.put("page","1");
         queryParam.put("per_page","12");
@@ -42,7 +42,7 @@ public class GetTestCases extends Base{
         assertEquals(reqresResponse.data.size(),12);
 
     }
-    @Test
+    @Test(priority = 5)
     public void getCallWithValidUser() {
         assertEquals(getAPICall("getWithUsers","3").statusCode(),200);
 
@@ -53,7 +53,7 @@ public class GetTestCases extends Base{
                 {"3", "Emma", "Wong", "emma.wong@reqres.in"}
         };
     }
-    @Test(dataProvider = "user")
+    @Test(dataProvider = "user",priority = 6)
     public void checkUserInfo(String id, String fname, String lname, String email)
     {
         getAPICall("getWithUsers",id);
