@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="MyTestSuite" parallel="false">
+    <test name="MyTest">
+        <classes>
+            <class name="TestCases.GetTestCases"/>
+            <class name="TestCases.PostTestCases"/>
+        </classes>
+    </test>
+    <!-- You can add more <test> tags here -->
+</suite>
